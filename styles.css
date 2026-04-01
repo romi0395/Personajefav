@@ -1,0 +1,211 @@
+/* ====================== VARIABLES CSS ====================== */
+:root {
+    --primary-green: #006400;     /* Verde oscuro Zoro */
+    --accent-green: #00ff7f;      /* Verde brillante */
+    --one-piece-blue: #2E63A4;
+    --one-piece-yellow: #FFCE00;
+    --dark-bg: #0f1c0f;
+    --light-text: #f0f0f0;
+    --card-bg: #1a2a1a;
+}
+
+/* ====================== RESET & GENERAL ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a140a;
+    color: var(--light-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ====================== HEADER & NAV ====================== */
+.header {
+    background: rgba(10, 20, 10, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--accent-green);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo h1 {
+    color: var(--accent-green);
+    font-size: 1.8rem;
+}
+
+.one-piece {
+    color: var(--one-piece-yellow);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-green);
+}
+
+/* ====================== HERO ====================== */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    color: var(--accent-green);
+    text-shadow: 0 0 20px var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.cta-button {
+    background: var(--accent-green);
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #00cc66;
+    transform: scale(1.05);
+}
+
+/* ====================== SECTIONS ====================== */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-green);
+}
+
+.bg-green {
+    background-color: var(--dark-bg);
+}
+
+.bg-dark {
+    background-color: #0a0f0a;
+}
+
+/* Grid y Cards (Material Design) */
+.cards-grid, .about-grid, .theories-grid, .funny-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card, .about-card, .theory-card, .funny-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0, 255, 127, 0.2);
+}
+
+.card:hover, .about-card:hover, .theory-card:hover, .funny-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 100, 0, 0.5);
+}
+
+/* Galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.funny-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: #050a05;
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 2px solid var(--accent-green);
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+    }
+}
